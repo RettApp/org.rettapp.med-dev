@@ -23,7 +23,7 @@ function kaufrunden(zahl){
 
 $(document).on("pageinit", function(){
 	panelAndListRefresh();
-	$(".aid").listview({
+	$(".med").listview({
 	    autodividers: true,
 	    autodividersSelector: function (li) {
 	        var out = li.attr('divider');
@@ -31,13 +31,13 @@ $(document).on("pageinit", function(){
 	    }
 	}).listview('refresh');
 });
-$(document).on("pagebeforecreate", "#main-01-disclaimer", function() {
+$(document).on("pagebeforecreate", "#main-1-disclaimer", function() {
 	var settings = JSON.parse(localStorage.getItem('settings'));
 	if(settings.startdisclaimer == "1") {
-		$.mobile.changePage("#main-02-index");
+		$.mobile.changePage("#main-2-index");
 	};
 });
-$(document).on("pagebeforeshow", "#function-02-settings", function(event) {
+$(document).on("pagebeforeshow", "#other-5-settings", function(event) {
 	var settings = JSON.parse(localStorage.getItem('settings'));
 	changeSliderOnSettings('#settings-startdisclaimer', settings.startdisclaimer);
 });
@@ -55,41 +55,6 @@ $(document).on("pagebeforeshow", function(event){
 	$('[href="#'+activePage+'"]').addClass("ui-btn-active");
 });
 
-$(document).on("pageshow", function(event){
-	$("input[id^='cigarettes']").change(function() {
-		cigarettesEasy = $("#cigarettes-1__easy").val();
-		cigarettesYearsEasy = $("#cigarettes-1-years__easy").val();
-		easy = calculatePackYears(cigarettesEasy, cigarettesYearsEasy);
-		$(".py-calculator-results__easy").html(kaufrunden(easy)+' py');
-		
-		cigarettes1Complex = $("#cigarettes-1__complex").val();
-		cigarettes1YearComplex = $("#cigarettes-1-years__complex").val();
-		cigarettes1 = calculatePackYears(cigarettes1Complex, cigarettes1YearComplex);
-		
-		cigarettes2Complex = $("#cigarettes-2__complex").val();
-		cigarettes2YearComplex = $("#cigarettes-2-years__complex").val();
-		cigarettes2 = calculatePackYears(cigarettes2Complex, cigarettes2YearComplex);
-		
-		cigarettes3Complex = $("#cigarettes-3__complex").val();
-		cigarettes3YearComplex = $("#cigarettes-3-years__complex").val();
-		cigarettes3 = calculatePackYears(cigarettes3Complex, cigarettes3YearComplex);
-		
-		cigarettes4Complex = $("#cigarettes-4__complex").val();
-		cigarettes4YearComplex = $("#cigarettes-4-years__complex").val();
-		cigarettes4 = calculatePackYears(cigarettes4Complex, cigarettes4YearComplex);
-		
-		cigarettes5Complex = $("#cigarettes-5__complex").val();
-		cigarettes5YearComplex = $("#cigarettes-5-years__complex").val();
-		cigarettes5 = calculatePackYears(cigarettes5Complex, cigarettes5YearComplex);
-		
-		cigarettes6Complex = $("#cigarettes-6__complex").val();
-		cigarettes6YearComplex = $("#cigarettes-6-years__complex").val();
-		cigarettes6 = calculatePackYears(cigarettes6Complex, cigarettes6YearComplex);
-		
-		complex = cigarettes1+cigarettes2+cigarettes3;
-		$(".py-calculator-results__complex").html(kaufrunden(complex)+' py');
-	});
-})
 $(document).on("pageshow", "#aid-26", function(event) {
 	$("input").change(function() {
 	    unityLabel = $("#unity :radio:checked").attr('label');
