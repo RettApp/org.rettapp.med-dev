@@ -44,7 +44,7 @@
 			$smarty->display('string:'.$template_string);
 		}else{
 			$template_string =  '<div data-role="{$datarole}" id="{$prefix}-{$uid}-{$id}">';
-			$template_string .= '<div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>{$title}</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div>';
+			$template_string .= '<div data-role="header" data-position="fixed"><a data-rel="back" class="ui-btn ui-btn-icon-left ui-icon-arrow-l ui-btn-icon-notext ui-corner-all">Zurück</a><h1>{$title}</h1><div data-role="controlgroup" data-type="horizontal" class="ui-mini ui-btn-right"><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-alert ui-btn-icon-notext">Home</a><a href="#other-5-settings" class="ui-btn ui-btn-icon-right ui-icon-gear ui-btn-icon-notext" data-transition="pop" data-direction="reverse">Einstellungen</a><a href="#main-2-index" class="ui-btn ui-btn-icon-right ui-icon-home ui-btn-icon-notext">Home</a></div></div>';
 			$template_string .= $inhalt['content'];
 			$template_string .= '</div>';
 			$smarty->display('string:'.$template_string);
